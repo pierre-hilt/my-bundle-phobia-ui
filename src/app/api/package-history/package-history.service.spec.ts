@@ -10,10 +10,6 @@ describe('PackageHistoryService', () => {
     service = TestBed.get(PackageHistoryService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-
   it('should call http with page-history path', () => {
     const httpService = TestBed.get(HttpClient);
     spyOn(httpService, 'get');
