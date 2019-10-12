@@ -1,0 +1,8 @@
+{
+  "/": {
+    "target": "https://bundlephobia.com/api/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
