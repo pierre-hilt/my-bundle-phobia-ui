@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { PackageHistoryService } from './api/package-history/package-history.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +8,5 @@ import { PackageHistoryService } from './api/package-history/package-history.ser
 export class AppComponent {
   title = 'my-site';
 
-  constructor(private packageHistory: PackageHistoryService) {}
-
-  getHistory() {
-    this.packageHistory.getPageHistory('toto').subscribe(console.log);
-  }
+  constructor() {}
 }
