@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchFormComponent } from './search-form.component';
+import { By } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('SearchFormComponent', () => {
   let component: SearchFormComponent;
@@ -8,9 +10,9 @@ describe('SearchFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchFormComponent ]
-    })
-    .compileComponents();
+      imports: [ReactiveFormsModule],
+      declarations: [SearchFormComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +23,17 @@ describe('SearchFormComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have an input', () => {
+    const inputElement: any = fixture.debugElement.query(By.css('input'));
+    expect(inputElement).toBeTruthy();
+  });
+
+  it('should call search on submit', () => {
+    spyOn(fixture.componentInstance, 'search').and.callThrough();
+    const formElement: any = fixture.debugElement.query(By.css('form'));
+    formElement.triggerEventHandler('submit', null);
+    expect(fixture.componentInstance.search).toHaveBeenCalled();
   });
 });
