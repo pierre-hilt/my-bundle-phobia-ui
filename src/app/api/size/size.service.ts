@@ -5,10 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PackageHistoryService {
+export class SizeService {
+  readonly apiKey = 'size';
   constructor(private httpClient: HttpClient) {}
 
-  getPageHistory(packageName: string): Observable<any> {
-    return this.httpClient.get('/package-history?package=' + packageName);
+  getSize(packageName: string): Observable<any> {
+    return this.httpClient.get(`/${this.apiKey}?package=${packageName}`);
   }
 }

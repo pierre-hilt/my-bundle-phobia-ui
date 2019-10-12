@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PackageHistoryService } from './package-history/package-history.service';
+import { PackageHistoryService } from './api/package-history/package-history.service';
 
 @Component({
   selector: 'app-root',
