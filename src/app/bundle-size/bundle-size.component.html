@@ -1,0 +1,15 @@
+<ng-container *ngIf="bundleSize$ | async as bundleSizeState">
+  <h2>Bundle Size</h2>
+  <div>
+    <div>{{ bundleSizeState.version }}</div>
+    <div>Version</div>
+  </div>
+  <div>
+    <div>{{ bundleSizeState.size | fileSize }}</div>
+    <div>Minified</div>
+  </div>
+  <div>
+    <div>{{ bundleSizeState.gzip | fileSize }}</div>
+    <div>Minified + GZIP</div>
+  </div>
+</ng-container>

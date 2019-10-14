@@ -4,6 +4,7 @@ import { SearchFormComponent } from './search-form.component';
 import { By } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { of } from 'rxjs';
 
 describe('SearchFormComponent', () => {
   let component: SearchFormComponent;
@@ -29,7 +30,7 @@ describe('SearchFormComponent', () => {
 
   it('should call search on submit', () => {
     const httpClient = TestBed.get(HttpClient);
-    spyOn(httpClient, 'get');
+    spyOn(httpClient, 'get').and.returnValue(of({}));
     const formElement: any = fixture.debugElement.query(By.css('form'));
     formElement.triggerEventHandler('submit', null);
     expect(httpClient.get).toHaveBeenCalled();

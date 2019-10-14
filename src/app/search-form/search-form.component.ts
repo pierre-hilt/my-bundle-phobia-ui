@@ -14,7 +14,7 @@ export class SearchFormComponent implements OnInit {
 
   ngOnInit() {
     this.searchForm = this.formBuilder.group({
-      searchInput: ''
+      searchInput: 'react'
     });
   }
 

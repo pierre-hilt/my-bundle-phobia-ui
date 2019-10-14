@@ -24,7 +24,8 @@ describe('SearchService', () => {
     const bundleSizeService: BundleSizeService = TestBed.get(BundleSizeService);
     const bundleState: BundleSize = {
       gzip: 10,
-      minified: 100
+      size: 100,
+      version: '1.0.0'
     };
     spyOn(httpService, 'get').and.returnValue(of(bundleState));
     service.search('package-name');
