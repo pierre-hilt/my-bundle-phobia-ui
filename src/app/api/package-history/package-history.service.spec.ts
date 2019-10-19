@@ -13,7 +13,7 @@ describe('PackageHistoryService', () => {
   it('should call http with page-history path', () => {
     const httpService = TestBed.get(HttpClient);
     spyOn(httpService, 'get');
-    service.getPageHistory('package-name');
+    service.getPackageHistory('package-name');
     expect(httpService.get).toHaveBeenCalledWith('/package-history?package=package-name');
   });
 });

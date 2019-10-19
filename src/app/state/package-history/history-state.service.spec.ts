@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BundleSizeService } from './bundle-size.service';
+import { HistoryStateService } from './history-state.service';
 
-describe('BundleSizeService', () => {
+describe('HistoryStateService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: BundleSizeService = TestBed.get(BundleSizeService);
+    const service: HistoryStateService = TestBed.get(HistoryStateService);
     expect(service).toBeTruthy();
   });
 });

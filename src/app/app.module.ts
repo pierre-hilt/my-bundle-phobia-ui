@@ -7,9 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { BundleSizeComponent } from './bundle-size/bundle-size.component';
 import { FileSizePipe } from './utils/file-size.pipe';
+import { PackageHistoryComponent } from './package-history/package-history.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchFormComponent, BundleSizeComponent, FileSizePipe],
+  declarations: [AppComponent, SearchFormComponent, BundleSizeComponent, FileSizePipe, PackageHistoryComponent],
   imports: [BrowserModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]

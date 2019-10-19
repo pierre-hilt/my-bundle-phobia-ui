@@ -10,7 +10,7 @@ export interface BundleSize {
 @Injectable({
   providedIn: 'root'
 })
-export class BundleSizeService {
+export class BundleSizeStateService {
   private bundleState$ = new BehaviorSubject<BundleSize>(undefined);
 
   setBundleSize(bundleSize: BundleSize) {

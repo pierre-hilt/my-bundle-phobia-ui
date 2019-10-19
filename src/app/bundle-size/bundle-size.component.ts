@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BundleSizeService, BundleSize } from '../state/bundle-size/bundle-size.service';
+import { BundleSizeStateService, BundleSize } from '../state/bundle-size/bundle-size-state.service';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-bundle-size',
@@ -10,10 +11,9 @@ import { Observable } from 'rxjs';
 export class BundleSizeComponent implements OnInit {
   bundleSize$: Observable<BundleSize>;
 
-  constructor(private bundleSizeService: BundleSizeService) {}
+  constructor(private bundleSizeService: BundleSizeStateService) {}
 
   ngOnInit() {
-    this.bundleSize$ = this.bundleSizeService.getBundleSize();
-    this.bundleSize$.subscribe(console.log);
+    this.bundleSize$ = this.bundleSizeService.getBundleSize().pipe(tap(console.log));
   }
 }

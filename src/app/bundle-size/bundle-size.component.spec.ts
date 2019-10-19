@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BundleSizeComponent } from './bundle-size.component';
-import { BundleSizeService } from '../state/bundle-size/bundle-size.service';
+import { BundleSizeStateService } from '../state/bundle-size/bundle-size-state.service';
 import { FileSizePipe } from '../utils/file-size.pipe';
 
 describe('BundleSizeComponent', () => {
@@ -22,7 +22,7 @@ describe('BundleSizeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-    const bundleSizeService: BundleSizeService = TestBed.get(BundleSizeService);
+    const bundleSizeService: BundleSizeStateService = TestBed.get(BundleSizeStateService);
     bundleSizeService.setBundleSize({
       size: 100,
       gzip: 10,

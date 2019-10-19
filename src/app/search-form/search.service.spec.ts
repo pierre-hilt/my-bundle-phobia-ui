@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { SearchService } from './search.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { BundleSizeService, BundleSize } from '../state/bundle-size/bundle-size.service';
+import { BundleSizeStateService, BundleSize } from '../state/bundle-size/bundle-size-state.service';
 import { filter } from 'rxjs/operators';
 import { of } from 'rxjs';
 
@@ -21,7 +21,7 @@ describe('SearchService', () => {
 
   it('should set BundleSizeState after search', () => {
     const httpService = TestBed.get(HttpClient);
-    const bundleSizeService: BundleSizeService = TestBed.get(BundleSizeService);
+    const bundleSizeService: BundleSizeStateService = TestBed.get(BundleSizeStateService);
     const bundleState: BundleSize = {
       gzip: 10,
       size: 100,
