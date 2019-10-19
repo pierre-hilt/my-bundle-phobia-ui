@@ -1,7 +1,8 @@
-<div *ngIf="packageHistory$ | async as packageHistory">
+<ng-container *ngIf="packageHistory$ | async as packageHistory">
+  <h2>Package History</h2>
   <div *ngFor="let historyItem of packageHistory | keyvalue">
     <div>version: {{ historyItem.key }}</div>
     <div>minified: {{ historyItem.value.size | fileSize }}</div>
     <div>minified + GZIP: {{ historyItem.value.gzip | fileSize }}</div>
   </div>
-</div>
+</ng-container>

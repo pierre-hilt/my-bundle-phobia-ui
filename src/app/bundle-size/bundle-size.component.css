@@ -1,0 +1,12 @@
+.size-stats {
+  display: flex;
+}
+
+.size-stat {
+  flex: 1;
+  margin: 0px 15px;
+}
+
+.size-stat_value {
+  font-size: 2rem;
+}
