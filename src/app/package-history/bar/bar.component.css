@@ -1,0 +1,22 @@
+.full-bar {
+  height: 8px;
+  width: 160px;
+  margin-bottom: 2px;
+}
+
+.size-bar {
+  background-color: blue;
+  height: 8px;
+}
+
+.size-bar-gzip {
+  background-color: darkcyan;
+  height: 8px;
+  position: relative;
+}
+
+.empty-bar {
+  height: 8px;
+  width: 100px;
+  background-color: lightslategray;
+}

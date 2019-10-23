@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 export interface BundleSize {
-  size: number;
-  gzip: number;
-  version: string;
+  size?: number;
+  gzip?: number;
+  version?: string;
 }
 
 @Injectable({

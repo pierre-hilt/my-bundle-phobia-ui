@@ -8,9 +8,10 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { BundleSizeComponent } from './bundle-size/bundle-size.component';
 import { FileSizePipe } from './utils/file-size.pipe';
 import { PackageHistoryComponent } from './package-history/package-history.component';
+import { BarComponent } from './package-history/bar/bar.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchFormComponent, BundleSizeComponent, FileSizePipe, PackageHistoryComponent],
+  declarations: [AppComponent, SearchFormComponent, BundleSizeComponent, FileSizePipe, PackageHistoryComponent, BarComponent],
   imports: [BrowserModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
