@@ -199,19 +199,5 @@ export const packageHistoryMock = {
     size: 6499,
     version: '16.11.0'
   },
-  '0.0.0-experimental-5faf377df': {
-    assets: [{ gzip: 2743, name: 'main', size: 6791, type: 'js' }],
-    dependencyCount: 3,
-    dependencySizes: [{ approximateSize: 6799, name: 'react' }],
-    description: 'React is a JavaScript library for building user interfaces.',
-    gzip: 2743,
-    hasJSModule: false,
-    hasJSNext: false,
-    hasSideEffects: true,
-    name: 'react',
-    repository: 'https://github.com/facebook/react.git',
-    scoped: false,
-    size: 6791,
-    version: '0.0.0-experimental-5faf377df'
-  }
+  '0.0.0-experimental-5faf377df': {}
 };

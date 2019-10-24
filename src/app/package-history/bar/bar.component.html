@@ -1,16 +1,17 @@
-<div *ngIf="bundle?.size || bundle?.gzip; else emptyBar" class="full-bar">
-  <div
-    class="size-bar"
-    [ngStyle]="{
-      width: barSize + '%'
-    }"
-  >
+<div class="full-bar">
+  <ng-container *ngIf="bundle?.size || bundle?.gzip; else emptyBar">
+    <div
+      class="size-bar"
+      [ngStyle]="{
+        height: barSize - gzipPartSize + '%'
+      }"
+    ></div>
     <div
       class="size-bar-gzip"
       [ngStyle]="{
-        width: gzipPartSize + '%'
+        height: gzipPartSize + '%'
       }"
     ></div>
-  </div>
+  </ng-container>
 </div>
 <ng-template #emptyBar><div class="empty-bar full-bar"></div></ng-template>

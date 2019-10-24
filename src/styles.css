@@ -12,3 +12,16 @@
 * {
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
+
+body {
+  background-color: var(--main-bg-color);
+}
+
+:root {
+  --bg-color: #eddbb6;
+  --main-bg-color: #fafafa;
+  --primary-color: #264653;
+  --secondary-color: #2a9d8f;
+  --primary-light-color: #de7542;
+  --secondary-light-color: #e9c56a;
+}

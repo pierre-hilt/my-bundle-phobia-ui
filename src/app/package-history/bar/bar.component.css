@@ -1,22 +1,22 @@
 .full-bar {
-  height: 8px;
-  width: 160px;
-  margin-bottom: 2px;
+  height: 160px;
+  width: 16px;
+  margin: 0 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .size-bar {
-  background-color: blue;
-  height: 8px;
+  background-color: var(--secondary-light-color);
 }
 
 .size-bar-gzip {
-  background-color: darkcyan;
-  height: 8px;
+  background-color: var(--primary-light-color);
   position: relative;
 }
 
 .empty-bar {
-  height: 8px;
-  width: 100px;
-  background-color: lightslategray;
+  height: 100px;
+  background-color: var(--bg-color);
 }
