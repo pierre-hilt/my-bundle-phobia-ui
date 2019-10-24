@@ -25,3 +25,7 @@ body {
   --primary-light-color: #de7542;
   --secondary-light-color: #e9c56a;
 }
+
+.text-center {
+  text-align: center;
+}

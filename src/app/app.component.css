@@ -1,0 +1,19 @@
+.search-container,
+.result-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.result-container {
+  margin-top: 30px;
+}
+
+.container {
+  padding: 30px;
+}
+
+.bundle-container,
+.history-container {
+  padding: 0 4px;
+}
