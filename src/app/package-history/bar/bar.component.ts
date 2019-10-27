@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BundleSize } from 'src/app/state/bundle-size/bundle-size-state.service';
+import { FileSizePipe } from 'src/app/utils/file-size.pipe';
 
 @Component({
   selector: 'app-bar',
@@ -13,14 +14,25 @@ export class BarComponent implements OnInit {
 
   barSize: number;
   gzipPartSize: number;
+  title = '';
 
-  constructor() {}
+  constructor(private fileSizePipe: FileSizePipe) {}
 
   ngOnInit() {
     console.log(this.version, this.bundle);
     if (this.bundle) {
       this.barSize = ((this.bundle.size + this.bundle.gzip) / this.maximal) * 100;
       this.gzipPartSize = (this.bundle.gzip / this.bundle.size) * 100;
+      this.generateTitle(this.bundle.size, this.bundle.gzip);
+    }
+  }
+
+  private generateTitle(minSize, gzipSize) {
+    if (minSize && gzipSize) {
+      this.title = `Minify size is ${this.fileSizePipe.transform(minSize)}`;
+      this.title += `\nand GZIP size is ${this.fileSizePipe.transform(gzipSize)}`;
+    } else {
+      this.title = 'No information available';
     }
   }
 }

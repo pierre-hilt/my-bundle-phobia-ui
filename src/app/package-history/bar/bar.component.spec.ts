@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BarComponent } from './bar.component';
+import { FileSizePipe } from 'src/app/utils/file-size.pipe';
 
 describe('BarComponent', () => {
   let component: BarComponent;
