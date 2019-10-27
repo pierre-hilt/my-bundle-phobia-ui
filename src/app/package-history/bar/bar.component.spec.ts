@@ -30,7 +30,7 @@ describe('BarComponent', () => {
     };
     component.maximal = 10000;
     component.ngOnInit();
-    expect(component.barSize).toEqual(100);
-    expect(Math.floor(component.gzipPartSize)).toEqual(66);
+    expect(component.minPartSize).toEqual(60);
+    expect(Math.floor(component.gzipPartSize)).toEqual(40);
   });
 });

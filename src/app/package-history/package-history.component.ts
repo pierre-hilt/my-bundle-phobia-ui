@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HistoryStateService, PackageHistory } from '../state/package-history/history-state.service';
 import { Subscription } from 'rxjs';
-import { tap, filter } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 import { BundleSize } from '../state/bundle-size/bundle-size-state.service';
 import * as semver from 'semver';
 
@@ -22,10 +22,7 @@ export class PackageHistoryComponent implements OnInit {
   ngOnInit() {
     this.subscribtion = this.historyState
       .getHistory()
-      .pipe(
-        tap(console.log),
-        filter(data => !!data)
-      )
+      .pipe(filter(data => !!data))
       .subscribe((packageHistory: PackageHistory) => {
         this.packageHistory = packageHistory;
         this.sortedVersions = Object.keys(packageHistory).sort(semver.compare);

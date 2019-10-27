@@ -12,17 +12,16 @@ export class BarComponent implements OnInit {
   @Input() version: string;
   @Input() maximal: number;
 
-  barSize: number;
   gzipPartSize: number;
+  minPartSize: number;
   title = '';
 
   constructor(private fileSizePipe: FileSizePipe) {}
 
   ngOnInit() {
-    console.log(this.version, this.bundle);
     if (this.bundle) {
-      this.barSize = ((this.bundle.size + this.bundle.gzip) / this.maximal) * 100;
-      this.gzipPartSize = (this.bundle.gzip / this.bundle.size) * 100;
+      this.minPartSize = (this.bundle.size / this.maximal) * 100;
+      this.gzipPartSize = (this.bundle.gzip / this.maximal) * 100;
       this.generateTitle(this.bundle.size, this.bundle.gzip);
     }
   }
