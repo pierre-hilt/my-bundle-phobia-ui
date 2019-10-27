@@ -1,5 +1,8 @@
 import { browser, by, element } from 'protractor';
 
+/**
+ * Page object for the whole application
+ */
 export class AppPage {
   get searchInput() {
     return element(by.css('#search-input'));
@@ -39,12 +42,14 @@ export class AppPage {
     expect(this.packageHistoryPanel.element(by.css('.bar-chart')).isDisplayed()).toBeTruthy();
     const chartBars = this.packageHistoryPanel.all(by.css('.bar-chart .full-bar'));
     expect(chartBars.count()).toEqual(15);
+    // first bar is empty because no bundle is set for this version
     expect(
       chartBars
         .get(0)
         .element(by.css('.empty-bar'))
         .isDisplayed()
     ).toBeTruthy();
+    expect(chartBars.all(by.css('.empty-bar')).count()).toEqual(1);
     expect(chartBars.map(element => element.getText())).toEqual([
       '0.0.0-experimental-5faf377df',
       '16.6.3',

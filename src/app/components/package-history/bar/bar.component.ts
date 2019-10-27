@@ -12,8 +12,10 @@ export class BarComponent implements OnInit {
   @Input() version: string;
   @Input() maximal: number;
 
+  // Relative percentages of size to maximal size
   gzipPartSize: number;
   minPartSize: number;
+  // To display information on hover for each bar
   title = '';
 
   constructor(private fileSizePipe: FileSizePipe) {}

@@ -15,6 +15,11 @@ export class SearchService {
     private bundleSize: BundleSizeStateService
   ) {}
 
+  /**
+   * Call the API to get bundle information and history.
+   * Store the results in the states.
+   * @param packageName
+   */
   search(packageName: string) {
     this.sizeService.getSize(packageName).subscribe(data => {
       this.bundleSize.setBundleSize(data);

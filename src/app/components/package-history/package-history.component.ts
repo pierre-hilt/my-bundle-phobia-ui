@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import * as semver from 'semver';
@@ -10,12 +10,14 @@ import { PackageHistory, HistoryStateService } from 'src/app/state/package-histo
   templateUrl: './package-history.component.html',
   styleUrls: ['./package-history.component.css']
 })
-export class PackageHistoryComponent implements OnInit {
+export class PackageHistoryComponent implements OnInit, OnDestroy {
   packageHistory: PackageHistory;
-  subscribtion: Subscription;
+  // Maximal size of all history item, used to have a relative size for each bar
   maximalSize = 0;
-
+  // List of sorted version to display in the chart by order
   sortedVersions: string[] = [];
+
+  private subscribtion: Subscription;
 
   constructor(private historyState: HistoryStateService) {}
 
@@ -32,5 +34,9 @@ export class PackageHistoryComponent implements OnInit {
             .map((bundleSize: BundleSize) => bundleSize.gzip + bundleSize.size)
         );
       });
+  }
+
+  ngOnDestroy() {
+    this.subscribtion.unsubscribe();
   }
 }

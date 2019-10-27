@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  mock: false
+  mock: false // if set to true, mock object is returned instead of calling the server
 };
 
 /*

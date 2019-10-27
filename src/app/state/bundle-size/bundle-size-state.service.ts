@@ -10,6 +10,10 @@ export interface BundleSize {
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * Service to store states of bundle size.
+ * Call to API will fill the state, view is listenning to the state to display data.
+ */
 export class BundleSizeStateService {
   private bundleState$ = new BehaviorSubject<BundleSize>(undefined);
 
