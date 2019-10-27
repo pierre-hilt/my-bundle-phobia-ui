@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { HistoryStateService, PackageHistory } from '../state/package-history/history-state.service';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { BundleSize } from '../state/bundle-size/bundle-size-state.service';
 import * as semver from 'semver';
+import { BundleSize } from 'src/app/state/bundle-size/bundle-size-state.service';
+import { PackageHistory, HistoryStateService } from 'src/app/state/package-history/history-state.service';
 
 @Component({
   selector: 'app-package-history',

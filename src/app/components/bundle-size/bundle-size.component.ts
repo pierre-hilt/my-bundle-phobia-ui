@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BundleSizeStateService, BundleSize } from '../state/bundle-size/bundle-size-state.service';
+import { BundleSizeStateService, BundleSize } from '../../state/bundle-size/bundle-size-state.service';
 import { Observable } from 'rxjs';
 
 @Component({

@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { SearchService } from './search.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { BundleSizeStateService, BundleSize } from '../state/bundle-size/bundle-size-state.service';
+import { BundleSizeStateService, BundleSize } from '../../state/bundle-size/bundle-size-state.service';
 import { filter } from 'rxjs/operators';
 import { of } from 'rxjs';
 

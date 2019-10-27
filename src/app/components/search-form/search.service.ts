@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { SizeService } from '../api/size/size.service';
-import { BundleSizeStateService } from '../state/bundle-size/bundle-size-state.service';
-import { HistoryStateService } from '../state/package-history/history-state.service';
-import { PackageHistoryService } from '../api/package-history/package-history.service';
+import { SizeService } from '../../api/size/size.service';
+import { BundleSizeStateService } from '../../state/bundle-size/bundle-size-state.service';
+import { HistoryStateService } from '../../state/package-history/history-state.service';
+import { PackageHistoryService } from '../../api/package-history/package-history.service';
 
 @Injectable({
   providedIn: 'root'

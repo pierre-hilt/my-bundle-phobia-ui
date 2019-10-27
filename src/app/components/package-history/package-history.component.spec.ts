@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PackageHistoryComponent } from './package-history.component';
-import { FileSizePipe } from '../utils/file-size.pipe';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { HistoryStateService } from '../state/package-history/history-state.service';
+import { FileSizePipe } from 'src/app/utils/file-size.pipe';
+import { HistoryStateService } from 'src/app/state/package-history/history-state.service';
 
 describe('PackageHistoryComponent', () => {
   let component: PackageHistoryComponent;

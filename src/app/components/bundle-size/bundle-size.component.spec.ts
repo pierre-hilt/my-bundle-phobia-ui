@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BundleSizeComponent } from './bundle-size.component';
-import { BundleSizeStateService } from '../state/bundle-size/bundle-size-state.service';
-import { FileSizePipe } from '../utils/file-size.pipe';
+import { BundleSizeStateService } from '../../state/bundle-size/bundle-size-state.service';
+import { FileSizePipe } from '../../utils/file-size.pipe';
 
 describe('BundleSizeComponent', () => {
   let component: BundleSizeComponent;
