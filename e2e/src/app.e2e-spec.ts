@@ -6,18 +6,31 @@ describe('workspace-project App', () => {
 
   beforeEach(() => {
     page = new AppPage();
+    page.navigateTo();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('my-site app is running!');
+  it('should display only search input', () => {
+    expect(page.searchInput.isDisplayed()).toBeTruthy();
+    expect(page.bundleSizePanel.isDisplayed()).toBeFalsy();
+    expect(page.packageHistoryPanel.isDisplayed()).toBeFalsy();
+  });
+
+  it('should display result when search is submitted', () => {
+    page.search('react');
+    page.checkBundleSize();
+    page.checkPackageHistory();
   });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
-    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-    expect(logs).not.toContain(jasmine.objectContaining({
-      level: logging.Level.SEVERE,
-    } as logging.Entry));
+    const logs = await browser
+      .manage()
+      .logs()
+      .get(logging.Type.BROWSER);
+    expect(logs).not.toContain(
+      jasmine.objectContaining({
+        level: logging.Level.SEVERE
+      } as logging.Entry)
+    );
   });
 });
