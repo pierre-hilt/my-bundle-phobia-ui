@@ -20,3 +20,11 @@
   height: 100px;
   background-color: var(--bg-color);
 }
+
+.version {
+  transform: rotate(-90deg) translateX(-10px);
+  font-size: 0.75rem;
+  direction: rtl;
+  max-height: 0.5rem;
+  line-height: 1;
+}

@@ -1,3 +1,33 @@
 .bar-chart {
   display: flex;
+  padding-bottom: 30px;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.legend-min,
+.legend-gzip {
+  display: flex;
+}
+
+.legend-min .color-box {
+  background-color: var(--secondary-light-color);
+}
+
+.legend-gzip .color-box {
+  background-color: var(--primary-light-color);
+}
+
+.color-box {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.25rem;
+}
+
+.legend-min {
+  margin-right: 30px;
 }
