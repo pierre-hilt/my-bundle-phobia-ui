@@ -3,6 +3,8 @@
 This project is a rewrite of bundle phobia UI.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
+[Link to server project](https://github.com/pierre-hilt/my-bundle-phobia-server).
+
 ## Development server
 
 Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
