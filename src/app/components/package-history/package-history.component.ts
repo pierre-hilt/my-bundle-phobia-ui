@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { filter } from 'rxjs/operators';
 import * as semver from 'semver';
 import { PackageHistory, HistoryStateService, BundleSize } from 'src/app/state/package-history/history-state.service';
 
@@ -21,18 +20,17 @@ export class PackageHistoryComponent implements OnInit, OnDestroy {
   constructor(private historyState: HistoryStateService) {}
 
   ngOnInit() {
-    this.subscribtion = this.historyState
-      .getHistory()
-      .pipe(filter(data => !!data))
-      .subscribe((packageHistory: PackageHistory) => {
-        this.packageHistory = packageHistory;
+    this.subscribtion = this.historyState.getHistory().subscribe((packageHistory: PackageHistory) => {
+      this.packageHistory = packageHistory;
+      if (this.packageHistory) {
         this.sortedVersions = Object.keys(packageHistory).sort(semver.compare);
         this.maximalSize = Math.max(
           ...Object.values(this.packageHistory)
             .filter((bundleSize: BundleSize) => !!bundleSize.size && !!bundleSize.gzip)
             .map((bundleSize: BundleSize) => bundleSize.gzip + bundleSize.size)
         );
-      });
+      }
+    });
   }
 
   ngOnDestroy() {

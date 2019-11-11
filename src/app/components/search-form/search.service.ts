@@ -14,6 +14,8 @@ export class SearchService {
    * @param packageName
    */
   search(packageName: string) {
+    // reset the UI
+    this.historyService.setHistory(undefined);
     this.packageHistoryService.getPackageHistory(packageName).subscribe(data => {
       this.historyService.setHistory(data);
     });
