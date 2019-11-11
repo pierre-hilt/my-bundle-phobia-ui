@@ -1,5 +1,5 @@
 {
-  "name": "bundle-phobia",
+  "name": "my-bundle-phobia-ui",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
