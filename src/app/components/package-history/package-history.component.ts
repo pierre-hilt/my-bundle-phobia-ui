@@ -2,8 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import * as semver from 'semver';
-import { BundleSize } from 'src/app/state/bundle-size/bundle-size-state.service';
-import { PackageHistory, HistoryStateService } from 'src/app/state/package-history/history-state.service';
+import { PackageHistory, HistoryStateService, BundleSize } from 'src/app/state/package-history/history-state.service';
 
 @Component({
   selector: 'app-package-history',

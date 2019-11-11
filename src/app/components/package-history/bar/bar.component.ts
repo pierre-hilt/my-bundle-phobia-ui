@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BundleSize } from 'src/app/state/bundle-size/bundle-size-state.service';
 import { FileSizePipe } from 'src/app/utils/file-size.pipe';
+import { BundleSize } from 'src/app/state/package-history/history-state.service';
 
 @Component({
   selector: 'app-bar',

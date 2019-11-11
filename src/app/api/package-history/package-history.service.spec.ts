@@ -14,6 +14,6 @@ describe('PackageHistoryService', () => {
     const httpService = TestBed.get(HttpClient);
     spyOn(httpService, 'get');
     service.getPackageHistory('package-name');
-    expect(httpService.get).toHaveBeenCalledWith('/package-history?package=package-name');
+    expect(httpService.get).toHaveBeenCalledWith('/stats?package=package-name');
   });
 });

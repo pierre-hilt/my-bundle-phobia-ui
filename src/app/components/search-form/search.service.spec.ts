@@ -2,9 +2,9 @@ import { TestBed } from '@angular/core/testing';
 
 import { SearchService } from './search.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { BundleSizeStateService, BundleSize } from '../../state/bundle-size/bundle-size-state.service';
 import { filter } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { HistoryStateService, BundleSize } from 'src/app/state/package-history/history-state.service';
 
 describe('SearchService', () => {
   let service: SearchService;
@@ -21,16 +21,17 @@ describe('SearchService', () => {
 
   it('should set BundleSizeState after search', () => {
     const httpService = TestBed.get(HttpClient);
-    const bundleSizeService: BundleSizeStateService = TestBed.get(BundleSizeStateService);
-    const bundleState: BundleSize = {
-      gzip: 10,
-      size: 100,
-      version: '1.0.0'
+    const historyStateService: HistoryStateService = TestBed.get(HistoryStateService);
+    const bundleState = {
+      '1.0.0': {
+        gzip: 10,
+        size: 100
+      }
     };
     spyOn(httpService, 'get').and.returnValue(of(bundleState));
     service.search('package-name');
-    bundleSizeService
-      .getBundleSize()
+    historyStateService
+      .getHistory()
       .pipe(filter(data => !!data))
       .subscribe(data => {
         expect(data).toEqual(bundleState);

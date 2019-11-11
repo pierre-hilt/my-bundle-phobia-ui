@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BundleSizeStateService, BundleSize } from '../../state/bundle-size/bundle-size-state.service';
 import { Observable } from 'rxjs';
+import { HistoryStateService, PackageHistory, BundleSize } from 'src/app/state/package-history/history-state.service';
+import { map } from 'rxjs/operators';
+import * as semver from 'semver';
 
 @Component({
   selector: 'app-bundle-size',
@@ -10,9 +12,20 @@ import { Observable } from 'rxjs';
 export class BundleSizeComponent implements OnInit {
   bundleSize$: Observable<BundleSize>;
 
-  constructor(private bundleSizeService: BundleSizeStateService) {}
+  constructor(private historyState: HistoryStateService) {}
 
   ngOnInit() {
-    this.bundleSize$ = this.bundleSizeService.getBundleSize();
+    this.bundleSize$ = this.historyState.getHistory().pipe(
+      map((history: PackageHistory) => {
+        if (history) {
+          const lastVersion = Object.keys(history)
+            .sort(semver.compare)
+            .slice(-1)[0];
+          return { ...history[lastVersion], version: lastVersion };
+        } else {
+          return undefined;
+        }
+      })
+    );
   }
 }

@@ -1,8 +1,13 @@
 import { Injectable } from '@angular/core';
-import { BundleSize } from '../bundle-size/bundle-size-state.service';
 import { BehaviorSubject } from 'rxjs';
 
 export type PackageHistory = { [version: string]: BundleSize };
+
+export interface BundleSize {
+  size?: number;
+  gzip?: number;
+  version?: string;
+}
 
 @Injectable({
   providedIn: 'root'

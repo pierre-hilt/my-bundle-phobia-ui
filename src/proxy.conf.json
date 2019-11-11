@@ -1,6 +1,6 @@
 {
   "/": {
-    "target": "https://bundlephobia.com/api/",
+    "target": "http://localhost:3000/api/",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true

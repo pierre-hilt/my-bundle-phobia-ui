@@ -31,8 +31,8 @@ export class AppPage {
     expect(this.bundleSizePanel.element(by.css('h2')).getText()).toEqual('Bundle Size');
     const stats = this.bundleSizePanel.all(by.css('.size-stat'));
     expect(stats.count()).toEqual(3);
-    expect(stats.get(0).getText()).toEqual('16.10.2\nVersion');
-    expect(stats.get(1).getText()).toEqual('6.5 KB\nMinified');
+    expect(stats.get(0).getText()).toEqual('16.11.0\nVersion');
+    expect(stats.get(1).getText()).toEqual('6.3 KB\nMinified');
     expect(stats.get(2).getText()).toEqual('2.6 KB\nMinified + GZIP');
   }
 

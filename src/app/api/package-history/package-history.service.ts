@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class PackageHistoryService {
-  readonly apiKey = 'package-history';
+  readonly apiKey = 'stats';
   constructor(private httpClient: HttpClient) {}
 
   getPackageHistory(packageName: string): Observable<PackageHistory> {
