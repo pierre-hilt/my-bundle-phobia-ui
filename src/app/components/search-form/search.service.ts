@@ -16,8 +16,14 @@ export class SearchService {
   search(packageName: string) {
     // reset the UI
     this.historyService.setHistory(undefined);
-    this.packageHistoryService.getPackageHistory(packageName).subscribe(data => {
-      this.historyService.setHistory(data);
-    });
+    this.packageHistoryService.getPackageHistory(packageName).subscribe(
+      data => {
+        this.historyService.setHistory(data);
+      },
+      err => {
+        // TODO display the error in the UI
+        console.log(err);
+      }
+    );
   }
 }
